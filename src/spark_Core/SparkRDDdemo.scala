@@ -1,12 +1,11 @@
 package spark_Core
-/**
- * @author lime
- * @time 2016-01-01
- * 
- */
+
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
-
+/**
+ * 该类在spark程序中属于驱动器程序，在该程序中包含了main方法，在该类中定义了集群中所有的运算方式。
+ * 该驱动器程序是通过SparkContext来和集群联系的。所以在驱动器程序中代码大致分为三部分：1.创建SparkContext。2.运算。3.关闭SparkContext
+ */
 object SparkRDDdemo {
   def main(args: Array[String]): Unit = {
     /**
@@ -20,6 +19,8 @@ object SparkRDDdemo {
     val sc = new SparkContext(conf)
     /**
      * 创建RDD的方式
+     * 		1.sc.parallelize
+     * 		2.sc.makeRDD
      * 
      */
      //var rdd1 =sc.parallelize(List(1,2,3,4), 2);
